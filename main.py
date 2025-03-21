@@ -3,6 +3,11 @@ from constants import *
 
 pygame.init()
 
+clock = pygame.time.Clock()
+dt = 0
+dt = clock.tick(60) / 1000
+
+
 def main():
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
