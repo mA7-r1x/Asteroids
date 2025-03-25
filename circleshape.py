@@ -3,7 +3,10 @@ import pygame
 # Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
     def __init__(self, x, y, radius):
-        # we will be using this later
+        self.x = x
+        self.y = y
+        self.radius = radius
+        
         if hasattr(self, "containers"):
             super().__init__(self.containers)
         else:
