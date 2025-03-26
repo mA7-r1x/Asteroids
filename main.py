@@ -1,8 +1,9 @@
 import pygame
+import sys
 from constants import *
 from player import Player
 from asteroidfield import AsteroidField
-from asteroid import Asteroid
+from asteroid import *
 from circleshape import CircleShape
 
 pygame.init()
@@ -43,6 +44,18 @@ def main():
         screen.fill((0, 0, 0))  # Fill screen with black
 
         updatable.update(dt)
+        
+        def update(self):
+            # Update the position based on the velocity
+            self.position += self.velocity
+
+
+            for asteroid in asteroids:
+                if player.collides_with(asteroid):
+                    print("Game over!")
+                    sys.exit()  # Exit the program
+         
+
         for entity in drawable:
             entity.draw(screen)
 
